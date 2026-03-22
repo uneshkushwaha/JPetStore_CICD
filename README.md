@@ -112,7 +112,11 @@ Note: In case if you have stopped the server - the connection will be refused to
 1. job name:- PetAnimalStore
 2. Job type: pipeline and clicked OK
 3. Old build discarded and max of build to keep is 2.
-4. 
+4. Hello World - sample pipeline is considered.
+5. Pipeline Syntax:- Git, main, no credentials is required if repo is public, unchecked includes, and clicked on generate pipeline script.
+   https://prnt.sc/FM5pb7ZtvHLp
+6. Pipeline Script:   
+https://prnt.sc/VLKSU1weRO-t
  
     
 
