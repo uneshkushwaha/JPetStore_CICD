@@ -82,3 +82,19 @@ Perform integration tests for screen transition.
 ```
 $ ./mvnw clean verify -P tomcat90
 ```
+
+
+
+
+
+###My_notes
+
+1. created AWS ec2 instance (JPetStore_CICD) and connected on ubuntu with ssh -i "cicd_project_key.pem" ubuntu@ec2-13-60-170-55.eu-north-1.compute.amazonaws.com
+   https://prnt.sc/lmj8_sJcom-_
+
+   ### Jenkins
+   Note: Everytime you create different ec2 server then each time you have install java, Jenkins, Docker and have to enable the PORTS , only keypair can be same for all other instances.
+   1. Installed java, Jenkins on ubutntu ec2 server.
+   2. sudo systemctl start jenkins, sudo systemctl enable jenkins, sudo systemctl status jenkins
+   3.  Jenkins can be only accessed on the port 8080 - so, it is enbale is AWS --> Security Groups --> https://prnt.sc/DPkL9XbtB53t
+   4.  Now, the Jenkins is accessible with public ip of ec2 server :8080
