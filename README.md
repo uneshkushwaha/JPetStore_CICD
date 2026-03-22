@@ -98,3 +98,5 @@ $ ./mvnw clean verify -P tomcat90
    2. sudo systemctl start jenkins, sudo systemctl enable jenkins, sudo systemctl status jenkins
    3.  Jenkins can be only accessed on the port 8080 - so, it is enbale is AWS --> Security Groups --> https://prnt.sc/DPkL9XbtB53t
    4.  Now, the Jenkins is accessible with public ip of ec2 server :8080
+      https://prnt.sc/3xSsfjyHIaoU
+Note: In case if you have stopped the server - the connection will be refused to connect and everytime you start the server - it will have different public_ip.
