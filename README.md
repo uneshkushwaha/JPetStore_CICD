@@ -100,3 +100,33 @@ $ ./mvnw clean verify -P tomcat90
    4.  Now, the Jenkins is accessible with public ip of ec2 server :8080
       https://prnt.sc/3xSsfjyHIaoU
 Note: In case if you have stopped the server - the connection will be refused to connect and everytime you start the server - it will have different public_ip.
+
+5. Once Jenkins is accessed - they will ask for the initial password from the path they provide like /var/lib/jenkins/secrets/initialAdminPassword.
+6. Paste the password from the path and again customize the password as you desire.
+7. Plugins Installed : - Eclipse Temurin installer
+                       - SonarQube Scanner
+                       - OWASP Dependency-Check
+                       - Docker
+                       - Docker PipelineVersion
+###Creating Job:
+1. job name:- PetAnimalStore
+2. Job type: pipeline and clicked OK
+3. Old build discarded and max of build to keep is 2.
+4. 
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
