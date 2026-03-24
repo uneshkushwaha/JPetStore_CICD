@@ -117,7 +117,9 @@ Note: In case if you have stopped the server - the connection will be refused to
    https://prnt.sc/FM5pb7ZtvHLp
 6. Pipeline Script:   
 https://prnt.sc/VLKSU1weRO-t
- 
+
+ 7. Sonarqube Starting: https://prnt.sc/A5JcGHqwO1QP
+ https://prnt.sc/l7kXHE7seCn6
     
 
 
