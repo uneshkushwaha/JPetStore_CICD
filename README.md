@@ -126,7 +126,9 @@ https://prnt.sc/VLKSU1weRO-t
 
 
 
+Error: While accessing Sonarqube on port 9000 faced issuing like when i give command to start sonarqube then it get start but suddenly get crashed due to the lack of memory.
 
+so, change the instance type from t3.micro to t3.small (2GB) - same issue in 2GB, c7i-flex.large (4GB) then it worked.
 
 
 
