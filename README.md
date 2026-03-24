@@ -120,6 +120,8 @@ https://prnt.sc/VLKSU1weRO-t
 
  7. Sonarqube Starting: https://prnt.sc/A5JcGHqwO1QP
  https://prnt.sc/l7kXHE7seCn6
+8. Sonarqube Login: https://prnt.sc/_-hXWJUA8qdu
+9. For authentication of Sonarqube with Jenkins we requires Token:
     
 
 
