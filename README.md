@@ -120,7 +120,7 @@ https://prnt.sc/VLKSU1weRO-t
 
  7. Sonarqube Starting: https://prnt.sc/A5JcGHqwO1QP
  https://prnt.sc/l7kXHE7seCn6
-8. Sonarqube Login: https://prnt.sc/_-hXWJUA8qdu
+8. Sonarqube Login: https://prnt.sc/_-hXWJUA8qdu, https://prnt.sc/9hHzZ8xJmCGx, https://prnt.sc/nnPGsOR2rWKY
 9. For authentication of Sonarqube with Jenkins we requires Token:
     
 
@@ -129,6 +129,9 @@ https://prnt.sc/VLKSU1weRO-t
 Error: While accessing Sonarqube on port 9000 faced issuing like when i give command to start sonarqube then it get start but suddenly get crashed due to the lack of memory.
 
 so, change the instance type from t3.micro to t3.small (2GB) - same issue in 2GB, c7i-flex.large (4GB) then it worked.
+
+
+10. PipelineSyntax:https://prnt.sc/fgZW0VhERvCk
 
 
 
