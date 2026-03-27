@@ -122,19 +122,25 @@ https://prnt.sc/VLKSU1weRO-t
  https://prnt.sc/l7kXHE7seCn6
 8. Sonarqube Login: https://prnt.sc/_-hXWJUA8qdu, https://prnt.sc/9hHzZ8xJmCGx, https://prnt.sc/nnPGsOR2rWKY
 9. For authentication of Sonarqube with Jenkins we requires Token:
-    
+ 10. PipelineSyntax:https://prnt.sc/fgZW0VhERvCk   
 
 
 
-Error: While accessing Sonarqube on port 9000 faced issuing like when i give command to start sonarqube then it get start but suddenly get crashed due to the lack of memory.
+##################################### Error: #######################################
+
+a. While accessing Sonarqube on port 9000 faced issuing like when i give command to start sonarqube then it get start but suddenly get crashed due to the lack of memory.
 
 so, change the instance type from t3.micro to t3.small (2GB) - same issue in 2GB, c7i-flex.large (4GB) then it worked.
 
 
-10. PipelineSyntax:https://prnt.sc/fgZW0VhERvCk
 
 
 
+b.  6th build was failed due to error in the sonarqube script as the previous was `Dsonar.url=http://16.171.1.175:9000/` which indicates the access of sonarqube cloud server by ignoring our local sonarqube server created on ec2 instance. This was replaced by `-Dsonar.host.url=http://16.171.1.175:9000`
+
+c. 7th build also failed as i have stopped the ec2 instance pervious for cost saving - in the new day starting the ec2 instance changes the public_ip which should replace in the script of the sonarqube and the networking issues which caused the build failed resolved here.
+
+d. 
 
 
 
