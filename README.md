@@ -140,7 +140,7 @@ b.  6th build was failed due to error in the sonarqube script as the previous wa
 
 c. 7th build also failed as i have stopped the ec2 instance pervious for cost saving - in the new day starting the ec2 instance changes the public_ip which should replace in the script of the sonarqube and the networking issues which caused the build failed resolved here.
 
-d. 
+d. 8th build faile because of NVD returned status 409 that means too many request where Jenkins is trying to download the vulnerability from NVD (National Vulnerability Database). As a solution - API key is requested from the NVD website which is free that makes smoother to make further more requests. This comes under the OWSAP(open Web Application Security Project) - dependency check: https://prnt.sc/Lt8UCC-VNp_e
 
 
 
