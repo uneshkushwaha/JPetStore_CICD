@@ -142,6 +142,11 @@ c. 7th build also failed as i have stopped the ec2 instance pervious for cost sa
 
 d. 8th build faile because of NVD returned status 409 that means too many request where Jenkins is trying to download the vulnerability from NVD (National Vulnerability Database). As a solution - API key is requested from the NVD website which is free that makes smoother to make further more requests. This comes under the OWSAP(open Web Application Security Project) - dependency check: https://prnt.sc/Lt8UCC-VNp_e
 
+Error: String Interploation, also the actual API key is the one you get after the 100% validation of the API key which you have received in the email. The API key activated in  the email is not the actual API key.
+
+e. In 22th build the OWSAP build was succed as the API key was wrong initally, secondly due to multiple builds - disks get occupied and no swap available for the RAM which was configured with 20GB in ec2 console before it was 8GB EBS. https://prnt.sc/nGKyUgaxR_Vc
+https://prnt.sc/vKhjd7aWEpvl
+
 
 
 
