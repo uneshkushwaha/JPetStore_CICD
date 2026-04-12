@@ -186,7 +186,7 @@
     <finalName>jpetstore</finalName>
     <pluginManagement>
       <plugins>
-       <!-- <plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId> 
           <version>3.3.2</version> 
@@ -197,7 +197,7 @@
               </manifestEntries>
             </archive>
           </configuration>
-        </plugin> -->
+        </plugin> 
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>3.1.0</version>
