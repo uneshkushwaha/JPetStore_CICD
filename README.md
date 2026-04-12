@@ -148,7 +148,9 @@ e. In 22th build the OWSAP build was succed as the API key was wrong initally, s
 https://prnt.sc/vKhjd7aWEpvl
 
 
-
+f. 34th build failed - Maven build was failed due to the cargo plugin enabled in the pom.xml and also Maven enforcer was failing the build as there is not mentioned the war plugin version.
+https://prnt.sc/RkvwmTJP-rLr
+https://prnt.sc/2nJTaggw_0XT
 
 
 
