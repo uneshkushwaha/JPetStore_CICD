@@ -152,7 +152,142 @@ f. 34th build failed - Maven build was failed due to the cargo plugin enabled in
 https://prnt.sc/RkvwmTJP-rLr
 https://prnt.sc/2nJTaggw_0XT
 
+g. Added jenkins in docker :--> https://prnt.sc/L9Wxarv1ie10
+
+g. Finally, in 41th build - whole pipeline was successfully build. After Maven build - there was issues on the docker file which was changed.
+https://prnt.sc/tg8R_LRfhlA-
+
+h. Personal Access Token (PAT) was generated in app.docker.com with read,write,delete permission - intially only read permission which was failing to push the image in docker hub.  ----> https://prnt.sc/iYEnsYIQJMIy
+
+i. https://prnt.sc/DAZPTfsPA9LK -> pushed docker imaged.
+
+j. All stages completed: https://prnt.sc/Pg2VxAQ1l2xk
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------Descriptive pipeline-----------------------------------------------
+
+pipeline {
+    agent any
+
+    tools {
+        jdk 'jdk21'
+        maven 'maven3'
+    }
+
+    environment {
+        SCANNER_HOME = tool 'sonar-scanner'
+    }
+
+    stages {
+
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/uneshkushwaha/JPetStore_CICD.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                sh "mvn clean compile"
+            }
+        }
+
+        stage('Sonarqube Analysis') {
+            steps {
+                sh '''
+                $SCANNER_HOME/bin/sonar-scanner \
+                -Dsonar.host.url=http://13.51.162.14:9000 \
+                -Dsonar.login=squ_e3fc5e1608860967ed9bdf488ae689625fc32b31 \
+                -Dsonar.projectName=petstore \
+                -Dsonar.java.binaries=. \
+                -Dsonar.projectKey=PetAnimalStore
+                '''
+            }
+        }
+
+        stage('OWASP Dependency') {
+            steps {
+                withCredentials([string(credentialsId: 'nvd-api-key', variable: 'NVD_KEY')]) {
+                    dependencyCheck additionalArguments: "--scan ./ --nvdApiKey=$NVD_KEY", odcInstallation: 'DP'
+                }
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh "mvn clean install -DskipTests -Dcargo.skip=true -Dcargo.start.skip=true"
+            }
+        }
+
+        stage('Build & Push Docker Image') {
+            steps {
+                script {
+                 withDockerRegistry(credentialsId:'b97dcb4d-9fd2-4d14-8b49-315a678eff26') {
+                        sh "docker build -t petanimalstore ."
+                        sh "docker tag petanimalstore:latest uneshkushwaha/jpetstore_cicd:latest"
+                        sh "docker push uneshkushwaha/jpetstore_cicd:latest"
+                    }
+                }
+            }
+        }
+
+        stage('Trivy') {
+            steps {
+                sh "trivy image uneshkushwaha/jpetstore_cicd:latest"
+            }
+        }
+    }
+}
 
