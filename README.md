@@ -166,8 +166,15 @@ j. All stages completed: https://prnt.sc/Pg2VxAQ1l2xk
 
 
 
-
-
+11. Created a Separate Pipeline for the application Deployment: https://prnt.sc/5awLQnxvc9mX
+12.  PORT 8081 is enabled as Jenkins was already running on port 8080 and Sonarqube 9000.
+13.  Intially, I ran http://13.51.162.14:8081 but failed as the app was deployed as /usr/local/tomcat/webapps/jpetstore.war  , Tomcat automatically deploys it as: /jpetstore
+14.  Finally, the app is running on http://13.51.162.14:8081/jpetstore/  
+https://prnt.sc/bq0WvSdSo6Xn
+https://prnt.sc/pu9EbAcZC4wH
+https://prnt.sc/GvgM_Zrtu1yx
+https://prnt.sc/LQqCWRYiMK4v
+https://prnt.sc/Adxwklu32uC_
 
 
 
@@ -290,4 +297,28 @@ pipeline {
         }
     }
 }
+
+
+
+
+
+-----Another Pipeline created for the Deployment:
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Deployment') {
+            steps {
+              script {
+                 withDockerRegistry(credentialsId:'b97dcb4d-9fd2-4d14-8b49-315a678eff26') {
+                        sh "docker run -d -p 8081:8080 uneshkushwaha/jpetstore_cicd:latest"
+                       
+                    }
+                }
+            }
+        }
+    }
+}
+
 
