@@ -160,8 +160,8 @@ https://prnt.sc/tg8R_LRfhlA-
 h. Personal Access Token (PAT) was generated in app.docker.com with read,write,delete permission - intially only read permission which was failing to push the image in docker hub.  ----> https://prnt.sc/iYEnsYIQJMIy
 
 i. https://prnt.sc/DAZPTfsPA9LK -> pushed docker imaged.
-
-j. All stages completed: https://prnt.sc/Pg2VxAQ1l2xk
+j. Trivy - https://prnt.sc/v6VI59p7rK8t
+k. All stages completed: https://prnt.sc/Pg2VxAQ1l2xk
 
 
 
@@ -170,6 +170,7 @@ j. All stages completed: https://prnt.sc/Pg2VxAQ1l2xk
 12.  PORT 8081 is enabled as Jenkins was already running on port 8080 and Sonarqube 9000.
 13.  Intially, I ran http://13.51.162.14:8081 but failed as the app was deployed as /usr/local/tomcat/webapps/jpetstore.war  , Tomcat automatically deploys it as: /jpetstore
 14.  Finally, the app is running on http://13.51.162.14:8081/jpetstore/  
+https://prnt.sc/uwJCvzKIJ4Dr
 https://prnt.sc/bq0WvSdSo6Xn
 https://prnt.sc/pu9EbAcZC4wH
 https://prnt.sc/GvgM_Zrtu1yx
